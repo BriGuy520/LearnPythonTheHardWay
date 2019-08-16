@@ -4,6 +4,9 @@ def cheese_and_crackers(cheese_count, boxes_of_crackers):
   print("Man, that's enough for a party.")
   print("Get a blanket.\n")
 
+def sum(x, y):
+  print(x + y)
+
 print("We can just give the function numbers directly:")
 cheese_and_crackers(20, 30)
 
@@ -18,3 +21,7 @@ cheese_and_crackers(20 + 10, 39 * 11)
 
 print("And we can combine the two, variables and math:")
 cheese_and_crackers(amount_of_cheese - 5, amount_of_crackers / 4)
+
+sum(2, 2)
+sum(5, 9)
+sum(10, 11)

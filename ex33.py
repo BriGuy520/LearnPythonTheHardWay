@@ -45,22 +45,40 @@
 # while_loop(11)
 
 
-def while_loop(first_int, last_int):
+# def while_loop(finish_int, increment):
 
+#   i = 0
+#   numbers = []
+  
+#   while i <= finish_int:
+
+#     print(f"At the top is {i}")
+#     numbers.append(i)
+
+#     i += increment
+#     print("Numbers now: " , numbers)
+#     print(f"At the bottom i is {i}")
+
+#   print("The numbers: ")
+
+#   for num in numbers:
+#     print(num)
+  
+# while_loop(30, 2)
+
+
+def refactored_loop(finish_int, increment):
+
+  i = 0
   numbers = []
   
-  while first_int <= last_int:
+  for num in range(i, finish_int):
+    print(f"At the top is {num}")
+    numbers.append(num)
 
-    print(f"At the top is {first_int}")
-    numbers.append(first_int)
-
-    first_int += 1
     print("Numbers now: " , numbers)
-    print(f"At the bottom i is {first_int}")
+    print(f"At the bottom i is {num}")
 
   print("The numbers: ")
-
-  for num in numbers:
-    print(num)
   
-while_loop(5, 11)
+refactored_loop(30, 2)

@@ -24,6 +24,7 @@ print('-' * 10)
 print('NY State has: ', cities['NY'])
 print("OR State has: ", cities['OR'])
 print("TX State has: ", cities['TX'])
+print("IL State has: ", cities['IL'])
 
 # print some states 
 print('-' * 10)
@@ -32,8 +33,8 @@ print("Florida's abbreviation is: ", states['Florida'])
 
 # do it by using the state then cities dict
 print('-' * 10)
-for state, abbrev in list(states.items()):
-  print(f"{state} is abbreviated {abbrev}")
+for abbrev, city in list(cities.items()):
+  print(f"{abbrev} has the city {city}")
 
 # now do both at the same time
 print('-' * 10)

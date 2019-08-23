@@ -1,5 +1,4 @@
 ## Animal is-a object (yes, sort of confusing) looks at the extra credit 
-
 class Animal(object):
   pass
 

@@ -28,8 +28,8 @@ class Engine(object):
 class Death(Scene):
 
   quips = [
-    "You died. YOu kinda suck at this.",
-    "Your Mom wouldl be proud...if she were smarter.",
+    "You died. You kinda suck at this.",
+    "Your Mom would be proud...if she were smarter.",
     "Such a luser.",
     "I have a small puppy that's better at this.",
     "You're worse than your Dad's jokes."
@@ -85,8 +85,8 @@ class CentralCorridor(Scene):
 
     elif action == "tell a joke!":
       print(dedent("""
-        Licky for you they made you learn Gothon insults in 
-        the academy. YOu tell the one Gothon joke you know:
+        Lucky for you they made you learn Gothon insults in 
+        the academy. You tell the one Gothon joke you know:
         Lbhe zbgure vf fb sng, jura fur fvgh nebhaq guy ubhfr, 
         not to laugh, then busts out laughing and can't move.
         While he's laughing you run up and shoot him square in
@@ -108,8 +108,8 @@ class LaserWeaponArmory(Scene):
     print(dedent("""
       You do a dive roll into the Weapon Armory, crouch and scan 
       the room for more Gothons that might be hiding. It's dead 
-      quiet, too quiet. You stand up and run to the fat side of
-      the room and find the neautron bomb in its container.
+      quiet, too quiet. You stand up and run to the far side of
+      the room and find the neutron bomb in its container.
       There's a keypad lock on the box and you need the code to
       get the bomb out. If you get the code wrong 10 times then 
       the lock closes forever and you can't get the bomb. The
@@ -119,6 +119,8 @@ class LaserWeaponArmory(Scene):
     code = f"{randint(1,9)}{randint(1,9)}{randint(1,9)}"
     guess = input("[keypad]> ")
     guesses = 0
+
+    print(code)
 
     while guess != code and guesses < 10:
       print("BZZZZEDDD!")
@@ -149,7 +151,7 @@ class TheBridge(Scene):
 
   def enter(self):
     print(dedent("""
-      You burst onto the Bridge with the netron destruct bomb
+      You burst onto the Bridge with the neutron destruct bomb
       under your arm and surprise 5 Gothons who are trying to
       take control of the ship. Each of them has an even uglier 
       clown costume than the last. They haven't pulled their 
@@ -161,7 +163,7 @@ class TheBridge(Scene):
 
     if action == "throw the bomb":
       print(dedent("""
-        IN a panc you throw the bomb at the group of Gothons
+        In a panic you throw the bomb at the group of Gothons
         and make a leap for the door. Right as you drop it a 
         Gothon shoots you right in the back killing you. As 
         you die you see another Gothon frantically try to 
@@ -173,9 +175,9 @@ class TheBridge(Scene):
     
     elif action == "slowly place the bomb":
       print(dedent("""
-        Youn point your blaster at the bomb under your arm and
+        You point your blaster at the bomb under your arm and
         the Gothons put their hands up and start to sweat. 
-        YOu inch backward to the door, open it, and then 
+        You inch backward to the door, open it, and then 
         carefully place the bomb on the floor, pointing your
         blaster at it. Yoi then hump back through the door,
         punch the close button and blast the lock so the 
@@ -196,7 +198,7 @@ class EscapePod(Scene):
       You rush through the ship desperately trying to make it to 
       the escape pod before the whole ship explodes. It seems
       like hardly any Gothons are on the ship, so your run is 
-      clear of interference. YOu get to the chamber with the
+      clear of interference. You get to the chamber with the
       escape pods, and now need to pick one to take. Some of
       them could be damaged but you don't have time to look.
       There's 5 pods, which one do you take?
@@ -206,7 +208,7 @@ class EscapePod(Scene):
     guess = input("[pod #]> ")
 
     if int(guess) != good_pod:
-      print(dedent("""
+      print(dedent(f"""
         You jump into pod {guess} and hit the eject button.
         The pod escapes out into the void of space, then
         implodes as the hull ruptures, crushing your body into 
@@ -216,7 +218,7 @@ class EscapePod(Scene):
       return 'death'
     
     else:
-      print(dedent("""
+      print(dedent(f"""
         You jump pod {guess} and hit the eject button.
         The pod easily slides out into space heading to the
         planet below. As it flies to the planet, you look 
@@ -256,4 +258,4 @@ class Map(object):
 
 a_map = Map('central_corridor')
 a_game = Engine(a_map)
-a_game = play()
+a_game.play()
